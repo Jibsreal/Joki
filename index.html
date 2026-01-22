@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joki Akun Orang - Happy Gaming Service 🎮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFE066 0%, #FF9E6B 50%, #FF6B6B 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating background emojis */
+        .bg-emoji {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .bg-emoji:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .bg-emoji:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+        .bg-emoji:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
+        .bg-emoji:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            z-index: 1;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2D3436;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #636E72;
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,224,102,0.2) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: #2D3436;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-desc {
+            color: #636E72;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #FFE066;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            color: #2D3436;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .price-tag {
+            background: #FF6B6B;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Why Choose Us */
+        .why-section {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            margin-top: 4rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .why-title {
+            font-size: 2rem;
+            color: #2D3436;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        .feature:nth-child(2) .feature-icon { animation-delay: 0.5s; }
+        .feature:nth-child(3) .feature-icon { animation-delay: 1s; }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        /* Contact Button */
+        .contact-section {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B, #FF9E6B);
+            color: white;
+            padding: 1.5rem 3rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(255,107,107,0.4);
+            transition: all 0.3s ease;
+            animation: pulse-btn 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-btn {
+            0%, 100% { box-shadow: 0 10px 25px rgba(255,107,107,0.4); }
+            50% { box-shadow: 0 15px 35px rgba(255,107,107,0.6); }
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255,107,107,0.6);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #2D3436;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .heart {
+            display: inline-block;
+            color: #FF6B6B;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .logo { font-size: 3rem; }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .features {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating background emojis -->
+    <div class="bg-emoji">🎮</div>
+    <div class="bg-emoji">⭐</div>
+    <div class="bg-emoji">🎯</div>
+    <div class="bg-emoji">🏆</div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">🌟</div>
+        <h1>Joki Akun Orang</h1>
+        <p class="tagline">Naikin rank-nya, senyumnya lebar! 😊✨</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Services Grid -->
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎮</div>
+                <h3 class="service-title">Mobile Legends</h3>
+                <p class="service-desc">Dari Warrior sampai Mythic! Bintang naik, bad mood turun. Proses cepat & aman.</p>
+                <div class="price-tag">Mulai 25k 💎</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔫</div>
+                <h3 class="service-title">Free Fire</h3>
+                <p class="service-desc">Push rank FF jadi lebih menyenangkan! Tier naik, booyah mulu!</p>
+                <div class="price-tag">Mulai 20k 💎</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚽</div>
+                <h3 class="service-title">eFootball</h3>
+                <p class="service-desc">Dari pemula jadi legenda! Rating naik, skill makin kece.</p>
+                <div class="price-tag">Mulai 30k 💎</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🃏</div>
+                <h3 class="service-title">Hearthstone</h3>
+                <p class="service-desc">Legend rank? Siap-siap dipuji teman-teman! Aman & trusted.</p>
+                <div class="price-tag">Mulai 40k 💎</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚔️</div>
+                <h3 class="service-title">Wild Rift</h3>
+                <p class="service-desc">Mobile MOBA favoritmu naik tier? Bisa banget! Happy gaming!</p>
+                <div class="price-tag">Mulai 35k 💎</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏀</div>
+                <h3 class="service-title">NBA 2K</h3>
+                <p class="service-desc">MyTeam jadi juara! Overall naik, kebanggaan makin tinggi.</p>
+                <div class="price-tag">Mulai 50k 💎</div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="why-section">
+            <h2 class="why-title">Kenapa Harus Kita? 🤔✨</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h4>Cepat & Tepat</h4>
+                    <p>Proses cepat, update tiap hari. Kamu bisa tracking progress kapan aja!</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Aman 100%</h4>
+                    <p>Akun di tangan yang tepat. No cheat, no illegal program. Safe & sound!</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h4>Support Ramah</h4>
+                    <p>CS kita standby 24/7, siap bantu dengan senyuman! (walau lewat chat 😄)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact-section">
+            <a href="#" class="contact-btn">
+                📱 Hubungi Kita di WhatsApp!
+            </a>
+            <p style="margin-top: 1rem; color: #2D3436;">Atau DM Instagram: @jokiakunorang</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Dibuat dengan <span class="heart">❤️</span> dan banyak kopi ☕ | 2024 - Happy Gaming!</p>
+    </footer>
+</body>
+</html>
