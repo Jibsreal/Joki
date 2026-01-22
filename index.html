@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AV - Joki Akun Orang | Happy Gaming Service 🎮</title>
+    <title>AV - Joki ML Rank | Sekarang Epic, Besok Mythic 🎮</title>
     <style>
         * {
             margin: 0;
@@ -74,9 +74,11 @@
         }
 
         .tagline {
-            font-size: 1.2rem;
-            color: #636E72;
-            font-weight: 600;
+            font-size: 1.5rem;
+            color: #2D3436;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+            margin-top: 1rem;
         }
 
         /* Container */
@@ -91,9 +93,12 @@
         /* Service Cards */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .service-card {
@@ -149,6 +154,8 @@
             line-height: 1.6;
             position: relative;
             z-index: 1;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .price-tag {
@@ -158,10 +165,10 @@
             border-radius: 25px;
             font-weight: bold;
             color: #2D3436;
-            margin-top: 1rem;
             position: relative;
             z-index: 1;
             transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .service-card:hover .price-tag {
@@ -438,6 +445,7 @@
             gap: 1rem;
             justify-content: center;
             margin: 1rem 0;
+            flex-wrap: wrap;
         }
 
         .payment-option {
@@ -447,6 +455,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
+            flex: 1;
+            min-width: 100px;
         }
 
         .payment-option:hover,
@@ -459,50 +469,6 @@
             font-size: 1.5rem;
             display: block;
             margin-bottom: 0.5rem;
-        }
-
-        /* Why Section */
-        .why-section {
-            background: white;
-            border-radius: 30px;
-            padding: 3rem;
-            margin-top: 4rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .why-title {
-            font-size: 2rem;
-            color: #2D3436;
-            margin-bottom: 2rem;
-        }
-
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .feature {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            animation: wiggle 2s ease-in-out infinite;
-        }
-
-        .feature:nth-child(2) .feature-icon { animation-delay: 0.5s; }
-        .feature:nth-child(3) .feature-icon { animation-delay: 1s; }
-
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
         }
 
         /* Footer */
@@ -530,11 +496,9 @@
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .logo { font-size: 3rem; }
+            .tagline { font-size: 1.2rem; }
             .services-grid {
                 grid-template-columns: 1fr;
-            }
-            .features {
-                flex-direction: column;
             }
             .cart-sidebar {
                 width: 100%;
@@ -553,9 +517,9 @@
     <!-- Header -->
     <header>
         <div class="brand-title">AV</div>
-        <div class="logo">🌟</div>
-        <h1>Joki Akun Orang</h1>
-        <p class="tagline">Naikin rank-nya, senyumnya lebar! 😊✨</p>
+        <div class="logo">🎮</div>
+        <h1>Joki Mobile Legends</h1>
+        <p class="tagline">sekarang epic, besok mythic</p>
     </header>
 
     <!-- Cart Toggle Button -->
@@ -569,28 +533,6 @@
         <!-- Services Grid -->
         <div class="services-grid" id="servicesGrid">
             <!-- Services will be rendered by JavaScript -->
-        </div>
-
-        <!-- Why Choose Us -->
-        <div class="why-section">
-            <h2 class="why-title">Kenapa Harus Kita? 🤔✨</h2>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">🚀</div>
-                    <h4>Cepat & Tepat</h4>
-                    <p>Proses cepat, update tiap hari. Kamu bisa tracking progress kapan aja!</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <h4>Aman 100%</h4>
-                    <p>Akun di tangan yang tepat. No cheat, no illegal program. Safe & sound!</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💬</div>
-                    <h4>Support Ramah</h4>
-                    <p>CS kita standby 24/7, siap bantu dengan senyuman! (walau lewat chat 😄)</p>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -684,14 +626,14 @@
     </div>
 
     <script>
-        // Data services
+        // Data services - Hanya Mobile Legends Rank (6 pilihan)
         const services = [
-            { id: 1, icon: '🎮', title: 'Mobile Legends', desc: 'Dari Warrior sampai Mythic! Bintang naik, bad mood turun. Proses cepat & aman.', price: 25000 },
-            { id: 2, icon: '🔫', title: 'Free Fire', desc: 'Push rank FF jadi lebih menyenangkan! Tier naik, booyah mulu!', price: 20000 },
-            { id: 3, icon: '⚽', title: 'eFootball', desc: 'Dari pemula jadi legenda! Rating naik, skill makin kece.', price: 30000 },
-            { id: 4, icon: '🃏', title: 'Hearthstone', desc: 'Legend rank? Siap-siap dipuji teman-teman! Aman & trusted.', price: 40000 },
-            { id: 5, icon: '⚔️', title: 'Wild Rift', desc: 'Mobile MOBA favoritmu naik tier? Bisa banget! Happy gaming!', price: 35000 },
-            { id: 6, icon: '🏀', title: 'NBA 2K', desc: 'MyTeam jadi juara! Overall naik, kebanggaan makin tinggi.', price: 50000 }
+            { id: 1, icon: '⚔️', title: 'Joki ke Epic', desc: 'Dari Warrior/Master ke Epic! Rank naik, skill ikut naik. Proses cepat & aman.', price: 15000 },
+            { id: 2, icon: '⭐', title: 'Joki ke Legend', desc: 'Dari Epic ke Legend! Bintang mulai bersinar, musuh mulai takut.', price: 25000 },
+            { id: 3, icon: '💎', title: 'Joki ke Mythic', desc: 'Dari Legend ke Mythic! Masuk kategori pro player, siap jadi MVP!', price: 100000 },
+            { id: 4, icon: '🏅', title: 'Joki ke Mythic Honor', desc: 'Dari Mythic ke Mythic Honor! Peringkat mulai dihormati, skill luar biasa!', price: 150000 },
+            { id: 5, icon: '✨', title: 'Joki ke Mythic Glory', desc: 'Dari Mythic Honor ke Mythic Glory! Tingkat kejayaan, hanya elit yang mencapai!', price: 225000 },
+            { id: 6, icon: '👑', title: 'Joki ke Mythic Immortal', desc: 'Dari Mythic Glory ke Mythic Immortal! Puncak tertinggi, legenda sejati!', price: 300000 }
         ];
 
         // Cart state
@@ -714,7 +656,7 @@
                     <div class="service-icon">${service.icon}</div>
                     <h3 class="service-title">${service.title}</h3>
                     <p class="service-desc">${service.desc}</p>
-                    <div class="price-tag">Mulai ${formatPrice(service.price)} 💎</div>
+                    <div class="price-tag">${formatPrice(service.price)} 💎</div>
                 </div>
             `).join('');
         }
@@ -835,7 +777,7 @@
         // Checkout
         function checkout() {
             if (cart.length === 0) {
-                alert('Keranjang masih kosong! Tambahkan item dulu ya 😊');
+                alert('Keranjang masih kosong! Pilih rank dulu ya 😊');
                 return;
             }
             
@@ -876,7 +818,7 @@
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             const itemsText = cart.map(item => `${item.title} (${item.quantity}x) = ${formatPrice(item.price * item.quantity)}`).join('%0A');
             
-            const message = `Halo AV!%0A%0A*PESANAN BARU*%0A%0A${itemsText}%0A%0A*TOTAL: ${formatPrice(total)}*%0AMetode Pembayaran: ${selectedPaymentMethod.toUpperCase()}%0A%0AMohon konfirmasi ya! 😊`;
+            const message = `Halo AV!%0A%0A*PESANAN BARU*%0A%0A${itemsText}%0A%0A*TOTAL: ${formatPrice(total)}*%0AMetode Pembayaran: ${selectedPaymentMethod.toUpperCase()}%0A%0AMohon konfirmasi ya! 😊%0A%0A*Note:* Amanah & Cepat!`;
             
             window.open(`https://wa.me/6281919000164?text=${message}`, '_blank');
             
@@ -889,6 +831,9 @@
 
         // Utility
         function formatPrice(price) {
+            if (price % 1000 === 0) {
+                return `Rp ${(price / 1000)}k`;
+            }
             return new Intl.NumberFormat('id-ID', {
                 style: 'currency',
                 currency: 'IDR',
