@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AV - Joki ML Rank | Sekarang Epic, Besok Mythic 🎮</title>
+    <title>AV - Joki Game | Sekarang Epic, Besok Mythic 🎮</title>
     <style>
         * {
             margin: 0;
@@ -13,10 +13,11 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #FFE066 0%, #FF9E6B 50%, #FF6B6B 100%);
+            background: linear-gradient(180deg, #eeebf4 0%, #4723a9 25%, #14181d 60%, #000000 90%, #000000 100%);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            color: white;
         }
 
         /* Floating background emojis */
@@ -54,30 +55,30 @@
 
         .brand-title {
             font-size: 1.5rem;
-            color: #2D3436;
+            color: #FFE066;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
         .logo {
             font-size: 4rem;
             margin-bottom: 1rem;
-            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.7));
         }
 
         h1 {
             font-size: 2.5rem;
-            color: #2D3436;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             margin-bottom: 0.5rem;
         }
 
         .tagline {
             font-size: 1.5rem;
-            color: #2D3436;
+            color: #FFE066;
             font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             margin-top: 1rem;
         }
 
@@ -93,24 +94,25 @@
         /* Service Cards */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
-            max-width: 1000px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .service-card {
-            background: white;
+            background: linear-gradient(135deg, rgba(71, 35, 169, 0.9), rgba(20, 24, 29, 0.9));
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             text-align: center;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            border: 1px solid rgba(255, 224, 102, 0.2);
         }
 
         .service-card::before {
@@ -120,18 +122,19 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,224,102,0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,224,102,0.1) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(0.8); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
+            0%, 100% { transform: scale(0.8); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.5; }
         }
 
         .service-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(71, 35, 169, 0.4);
+            border-color: rgba(255, 224, 102, 0.5);
         }
 
         .service-icon {
@@ -139,18 +142,20 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
         }
 
         .service-title {
             font-size: 1.5rem;
-            color: #2D3436;
+            color: white;
             margin-bottom: 0.5rem;
             position: relative;
             z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
         }
 
         .service-desc {
-            color: #636E72;
+            color: #d0d0d0;
             line-height: 1.6;
             position: relative;
             z-index: 1;
@@ -160,21 +165,32 @@
 
         .price-tag {
             display: inline-block;
-            background: #FFE066;
+            background: linear-gradient(135deg, #FFE066, #FF9E6B);
             padding: 0.5rem 1.5rem;
             border-radius: 25px;
             font-weight: bold;
-            color: #2D3436;
+            color: #14181d;
             position: relative;
             z-index: 1;
             transition: all 0.3s ease;
             font-size: 1.1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         .service-card:hover .price-tag {
-            background: #FF6B6B;
-            color: white;
             transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 224, 102, 0.4);
+        }
+
+        .unit-label {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 224, 102, 0.2);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #FFE066;
+            border: 1px solid rgba(255, 224, 102, 0.3);
         }
 
         /* Modal Detail Item */
@@ -185,7 +201,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.7);
             z-index: 1000;
             animation: fadeIn 0.3s ease;
         }
@@ -200,12 +216,14 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: white;
+            background: linear-gradient(135deg, #14181d, #4723a9);
             border-radius: 20px;
             padding: 2rem;
             max-width: 500px;
             width: 90%;
             animation: slideUp 0.3s ease;
+            border: 1px solid rgba(255, 224, 102, 0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
         }
 
         @keyframes slideUp {
@@ -221,6 +239,7 @@
         .modal-icon {
             font-size: 3rem;
             margin-bottom: 0.5rem;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
         }
 
         .modal-body {
@@ -244,6 +263,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            color: #14181d;
         }
 
         .quantity-btn:hover {
@@ -257,6 +277,7 @@
             font-weight: bold;
             min-width: 50px;
             text-align: center;
+            color: white;
         }
 
         .modal-footer {
@@ -280,8 +301,8 @@
         }
 
         .btn-secondary {
-            background: #DDD;
-            color: #2D3436;
+            background: rgba(255, 224, 102, 0.3);
+            color: white;
         }
 
         .btn:hover {
@@ -296,12 +317,13 @@
             right: -400px;
             width: 400px;
             height: 100%;
-            background: white;
-            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #14181d, #4723a9);
+            box-shadow: -5px 0 30px rgba(0,0,0,0.5);
             transition: right 0.3s ease;
             z-index: 1001;
             display: flex;
             flex-direction: column;
+            border-left: 1px solid rgba(255, 224, 102, 0.2);
         }
 
         .cart-sidebar.active {
@@ -310,9 +332,10 @@
 
         .cart-header {
             padding: 2rem;
-            background: linear-gradient(135deg, #FFE066, #FF9E6B);
-            color: #2D3436;
+            background: linear-gradient(135deg, #4723a9, #14181d);
+            color: white;
             text-align: center;
+            border-bottom: 1px solid rgba(255, 224, 102, 0.2);
         }
 
         .cart-items {
@@ -325,12 +348,13 @@
             display: flex;
             align-items: center;
             padding: 1rem;
-            border-bottom: 1px solid #EEE;
+            border-bottom: 1px solid rgba(255, 224, 102, 0.1);
             gap: 1rem;
         }
 
         .cart-item-icon {
             font-size: 2rem;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
         }
 
         .cart-item-details {
@@ -340,10 +364,11 @@
         .cart-item-title {
             font-weight: bold;
             margin-bottom: 0.25rem;
+            color: white;
         }
 
         .cart-item-price {
-            color: #FF6B6B;
+            color: #FFE066;
             font-weight: bold;
         }
 
@@ -366,7 +391,8 @@
 
         .cart-footer {
             padding: 1.5rem;
-            border-top: 1px solid #DDD;
+            border-top: 1px solid rgba(255, 224, 102, 0.2);
+            background: linear-gradient(135deg, #14181d, #4723a9);
         }
 
         .cart-total {
@@ -375,6 +401,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 1rem;
+            color: white;
         }
 
         .checkout-btn {
@@ -398,7 +425,7 @@
         .empty-cart {
             text-align: center;
             padding: 2rem;
-            color: #636E72;
+            color: #d0d0d0;
         }
 
         /* Cart Toggle Button */
@@ -406,29 +433,30 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #FF6B6B, #FF9E6B);
+            background: linear-gradient(135deg, #4723a9, #14181d);
             color: white;
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            border: none;
+            border: 1px solid rgba(255, 224, 102, 0.3);
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             z-index: 999;
             transition: all 0.3s ease;
         }
 
         .cart-toggle:hover {
             transform: scale(1.1);
+            background: linear-gradient(135deg, #FF6B6B, #FF9E6B);
         }
 
         .cart-count {
             position: absolute;
             top: -5px;
             right: -5px;
-            background: white;
-            color: #FF6B6B;
+            background: #FF6B6B;
+            color: white;
             width: 25px;
             height: 25px;
             border-radius: 50%;
@@ -450,19 +478,20 @@
 
         .payment-option {
             padding: 1rem 1.5rem;
-            border: 2px solid #DDD;
+            border: 2px solid rgba(255, 224, 102, 0.3);
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
             flex: 1;
             min-width: 100px;
+            color: white;
         }
 
         .payment-option:hover,
         .payment-option.selected {
-            border-color: #FF6B6B;
-            background: #FFE066;
+            border-color: #FFE066;
+            background: rgba(255, 224, 102, 0.1);
         }
 
         .payment-option i {
@@ -475,10 +504,11 @@
         footer {
             text-align: center;
             padding: 2rem;
-            color: #2D3436;
+            color: #FFE066;
             font-weight: 600;
             position: relative;
             z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
         }
 
         .heart {
@@ -518,7 +548,7 @@
     <header>
         <div class="brand-title">AV</div>
         <div class="logo">🎮</div>
-        <h1>Joki Mobile Legends</h1>
+        <h1>Joki Game Online Premium</h1>
         <p class="tagline">sekarang epic, besok mythic</p>
     </header>
 
@@ -555,7 +585,7 @@
                     <div class="quantity-display" id="modalQuantity">1</div>
                     <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
                 </div>
-                <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: #FF6B6B;">
+                <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: #FFE066;">
                     Total: <span id="modalTotal"></span>
                 </p>
             </div>
@@ -592,7 +622,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Pilih Metode Pembayaran</h2>
-                <p style="margin-top: 0.5rem; color: #636E72;">Total: <span id="paymentTotal"></span></p>
+                <p style="margin-top: 0.5rem; color: #d0d0d0;">Total: <span id="paymentTotal"></span></p>
             </div>
             <div class="modal-body">
                 <div class="payment-method">
@@ -613,9 +643,9 @@
                         <div>GOPAY</div>
                     </div>
                 </div>
-                <div id="paymentDetails" style="display: none; margin-top: 1rem; padding: 1rem; background: #FFE066; border-radius: 10px;">
-                    <p style="font-weight: bold; margin-bottom: 0.5rem;">Detail Pembayaran:</p>
-                    <p id="paymentDetailText"></p>
+                <div id="paymentDetails" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(255, 224, 102, 0.1); border-radius: 10px; border: 1px solid rgba(255, 224, 102, 0.3);">
+                    <p style="font-weight: bold; margin-bottom: 0.5rem; color: #FFE066;">Detail Pembayaran:</p>
+                    <p id="paymentDetailText" style="color: #d0d0d0;"></p>
                 </div>
             </div>
             <div class="modal-footer">
@@ -626,14 +656,25 @@
     </div>
 
     <script>
-        // Data services - Hanya Mobile Legends Rank (6 pilihan)
+        // Data services - Harga REAL per unit dari Google/Itemku
         const services = [
-            { id: 1, icon: '⚔️', title: 'Joki ke Epic', desc: 'Dari Warrior/Master ke Epic! Rank naik, skill ikut naik. Proses cepat & aman.', price: 15000 },
-            { id: 2, icon: '⭐', title: 'Joki ke Legend', desc: 'Dari Epic ke Legend! Bintang mulai bersinar, musuh mulai takut.', price: 25000 },
-            { id: 3, icon: '💎', title: 'Joki ke Mythic', desc: 'Dari Legend ke Mythic! Masuk kategori pro player, siap jadi MVP!', price: 100000 },
-            { id: 4, icon: '🏅', title: 'Joki ke Mythic Honor', desc: 'Dari Mythic ke Mythic Honor! Peringkat mulai dihormati, skill luar biasa!', price: 150000 },
-            { id: 5, icon: '✨', title: 'Joki ke Mythic Glory', desc: 'Dari Mythic Honor ke Mythic Glory! Tingkat kejayaan, hanya elit yang mencapai!', price: 225000 },
-            { id: 6, icon: '👑', title: 'Joki ke Mythic Immortal', desc: 'Dari Mythic Glory ke Mythic Immortal! Puncak tertinggi, legenda sejati!', price: 300000 }
+            // Mobile Legends - Per Bintang (Harga rata-rata market Indonesia)
+            { id: 1, icon: '⚔️', title: 'Joki ML Warrior', desc: 'Per bintang dari Warrior ke Elite. Proses cepat & aman.', price: 4000, unit: 'bintang' },
+            { id: 2, icon: '⭐', title: 'Joki ML Elite', desc: 'Per bintang dari Elite ke Master. Skill naik!', price: 5000, unit: 'bintang' },
+            { id: 3, icon: '💎', title: 'Joki ML Master', desc: 'Per bintang dari Master ke GM. Rank naik!', price: 6000, unit: 'bintang' },
+            { id: 4, icon: '🏅', title: 'Joki ML Grandmaster', desc: 'Per bintang dari GM ke Epic. Masuk elite!', price: 8000, unit: 'bintang' },
+            { id: 5, icon: '✨', title: 'Joki ML Epic', desc: 'Per bintang dari Epic ke Legend. Siap jadi pro!', price: 10000, unit: 'bintang' },
+            { id: 6, icon: '👑', title: 'Joki ML Legend', desc: 'Per bintang dari Legend ke Mythic. Puncak tertinggi!', price: 14000, unit: 'bintang' },
+            { id: 7, icon: '🎮', title: 'Joki ML Mythic', desc: 'Per bintang Mythic. Tetap di rank atas!', price: 20000, unit: 'bintang' },
+            { id: 8, icon: '🏆', title: 'Joki ML Mythic Honor', desc: 'Per bintang Mythic Honor. Elite sejati!', price: 25000, unit: 'bintang' },
+            { id: 9, icon: '💜', title: 'Joki ML Mythic Glory', desc: 'Per bintang Mythic Glory. Hanya dewa!', price: 30000, unit: 'bintang' },
+            { id: 10, icon: '🔥', title: 'Joki ML Mythic Immortal', desc: 'Per bintang Mythic Immortal. Legenda abadi!', price: 35000, unit: 'bintang' },
+            // Marvel Rivals - Per Tier (Estimasi harga per tier)
+            { id: 11, icon: '🦸', title: 'Joki Marvel Rivals', desc: 'Per tier (Bronze→Silver→Gold→Plat→Diamond→GM→Celestial). Naik rank hero shooter!', price: 15000, unit: 'tier' },
+            // Roblox Blox Fruits - Per Level
+            { id: 12, icon: '🧱', title: 'Joki Blox Fruits', desc: 'Per level. Naikin level & power Blox Fruits!', price: 2000, unit: 'level' },
+            // Valorant - Per Rank
+            { id: 13, icon: '🎯', title: 'Joki Valorant Rank', desc: 'Per rank. Dari Iron ke Immortal. Anti lock!', price: 50000, unit: 'rank' }
         ];
 
         // Cart state
@@ -656,7 +697,8 @@
                     <div class="service-icon">${service.icon}</div>
                     <h3 class="service-title">${service.title}</h3>
                     <p class="service-desc">${service.desc}</p>
-                    <div class="price-tag">${formatPrice(service.price)} 💎</div>
+                    <div class="price-tag">${formatPrice(service.price)}</div>
+                    <div class="unit-label">Per ${service.unit}</div>
                 </div>
             `).join('');
         }
@@ -668,7 +710,7 @@
             
             document.getElementById('modalIcon').textContent = currentItem.icon;
             document.getElementById('modalTitle').textContent = currentItem.title;
-            document.getElementById('modalDesc').textContent = currentItem.desc;
+            document.getElementById('modalDesc').textContent = `${currentItem.desc} ${currentItem.unit}.`;
             document.getElementById('modalQuantity').textContent = currentQuantity;
             document.getElementById('modalTotal').textContent = formatPrice(currentItem.price * currentQuantity);
             
@@ -739,7 +781,7 @@
                         <div class="cart-item-icon">${item.icon}</div>
                         <div class="cart-item-details">
                             <div class="cart-item-title">${item.title}</div>
-                            <div class="cart-item-price">${formatPrice(item.price)} x ${item.quantity}</div>
+                            <div class="cart-item-price">${formatPrice(item.price)} x ${item.quantity} ${item.unit}</div>
                         </div>
                         <div class="cart-item-actions">
                             <button class="quantity-btn" onclick="updateCartItem(${item.id}, -1)">−</button>
@@ -777,7 +819,7 @@
         // Checkout
         function checkout() {
             if (cart.length === 0) {
-                alert('Keranjang masih kosong! Pilih rank dulu ya 😊');
+                alert('Keranjang masih kosong! Pilih layanan dulu ya 😊');
                 return;
             }
             
@@ -816,7 +858,7 @@
             if (!selectedPaymentMethod) return;
             
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const itemsText = cart.map(item => `${item.title} (${item.quantity}x) = ${formatPrice(item.price * item.quantity)}`).join('%0A');
+            const itemsText = cart.map(item => `${item.title} (${item.quantity}x ${item.unit}) = ${formatPrice(item.price * item.quantity)}`).join('%0A');
             
             const message = `Halo AV!%0A%0A*PESANAN BARU*%0A%0A${itemsText}%0A%0A*TOTAL: ${formatPrice(total)}*%0AMetode Pembayaran: ${selectedPaymentMethod.toUpperCase()}%0A%0AMohon konfirmasi ya! 😊%0A%0A*Note:* Amanah & Cepat!`;
             
