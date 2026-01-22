@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joki Akun Orang - Happy Gaming Service 🎮</title>
+    <title>AV - Joki Akun Orang | Happy Gaming Service 🎮</title>
     <style>
         * {
             margin: 0;
@@ -50,6 +50,14 @@
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
+        }
+
+        .brand-title {
+            font-size: 1.5rem;
+            color: #2D3436;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
         }
 
         .logo {
@@ -237,6 +245,19 @@
             box-shadow: 0 15px 35px rgba(255,107,107,0.6);
         }
 
+        .whatsapp-number {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #2D3436;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .whatsapp-number::before {
+            content: '📞 ';
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -280,6 +301,7 @@
 
     <!-- Header -->
     <header>
+        <div class="brand-title">AV</div>
         <div class="logo">🌟</div>
         <h1>Joki Akun Orang</h1>
         <p class="tagline">Naikin rank-nya, senyumnya lebar! 😊✨</p>
@@ -356,10 +378,11 @@
 
         <!-- Contact -->
         <div class="contact-section">
-            <a href="#" class="contact-btn">
+            <a href="https://wa.me/6281919000164" class="contact-btn" target="_blank">
                 📱 Hubungi Kita di WhatsApp!
             </a>
-            <p style="margin-top: 1rem; color: #2D3436;">Atau DM Instagram: @jokiakunorang</p>
+            <p class="whatsapp-number">081919000164</p>
+            <p style="margin-top: 0.5rem; color: #2D3436;">Atau DM Instagram: @jokiakunorang</p>
         </div>
     </div>
 
