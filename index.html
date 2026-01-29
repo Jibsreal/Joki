@@ -333,18 +333,19 @@
             const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
             const html = `
                 <div class="cart-modal" id="paymentModal" style="display:flex;">
-                    <div class="cart-content">
-                        <h2 style="margin-bottom:1rem;">Pilih Pembayaran</h2>
-                        <p style="text-align:center;margin-bottom:1rem;">Total: ${formatPrice(total)}</p>
-                        <button class="btn btn-primary" style="margin-bottom:.5rem;" onclick="selectP('bca')">🏦 BCA</button>
-                        <button class="btn btn-primary" style="margin-bottom:.5rem;" onclick="selectP('bri')">🏦 BRI</button>
-                        <button class="btn btn-primary" style="margin-bottom:.5rem;" onclick="selectP('dana')">📱 DANA</button>
-                        <button class="btn btn-primary" style="margin-bottom:1rem;" onclick="selectP('gopay')">📱 GOPAY</button>
-                        <div id="payDet" style="display:none;background:#f1f2f6;padding:1rem;border-radius:10px;margin-bottom:1rem;"></div>
-                        <button class="btn btn-primary" id="payBtn" style="display:none;" onclick="sendWA()">Kirim ke WhatsApp</button>
-                        <button class="btn btn-secondary" onclick="document.getElementById('paymentModal').remove()">Batal</button>
-                    </div>
-                </div>
+    <div class="cart-content" style="color: black;">
+        <h2 style="margin-bottom:1rem; color: black;">Pilih Pembayaran</h2>
+        <p style="text-align:center;margin-bottom:1rem; color: black;">Total: ${formatPrice(total)}</p>
+        <button class="btn btn-primary" style="margin-bottom:.5rem;" onclick="selectP('bca')">🏦 BCA</button>
+        <button class="btn btn-primary" style="margin-bottom:.5rem;" onclick="selectP('bri')">🏦 BRI</button>
+        <button class="btn btn-primary" style="margin-bottom:.5rem;" onclick="selectP('dana')">📱 DANA</button>
+        <button class="btn btn-primary" style="margin-bottom:1rem;" onclick="selectP('gopay')">📱 GOPAY</button>
+        <div id="payDet" style="display:none;background:#f1f2f6;padding:1rem;border-radius:10px;margin-bottom:1rem; color: black;"></div>
+        <button class="btn btn-primary" id="payBtn" style="display:none;" onclick="sendWA()">Kirim ke WhatsApp</button>
+        <button class="btn btn-secondary" onclick="document.getElementById('paymentModal').remove()">Batal</button>
+    </div>
+</div>
+
             `;
             document.body.insertAdjacentHTML('beforeend', html);
         }
